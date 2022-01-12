@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     tilCardNum.setError("Invalid card number");
                     tietCardNum.setText("");
                 } else if (!checkExpiry(tietMMYY.getText())) {
-                    tilMMYY.setError("Invalid or Already Expired");
+                    tilMMYY.setError("Invalid or Expired");
                     tietMMYY.setText("");
                 } else if (!checkSecCode(tietSec.getText())) {
                     tilSec.setError("Invalid security code");
@@ -109,9 +109,12 @@ public class MainActivity extends AppCompatActivity {
             int sum = 0;
             int count = 1;
             while (num != 0) {
+                long next = num % 10;
                 if (count % 2 != 0) {
-                    sum += (num % 10) * 2;
-                } else sum += num % 10;
+                    next = next * 2;
+                    if (next > 9) next = next / 10 + next % 10;
+                    sum += next;
+                } else sum += next;
                 count++;
                 num = num / 10;
             }
