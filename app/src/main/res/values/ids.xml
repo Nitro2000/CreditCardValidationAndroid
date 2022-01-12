@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tilCardNum" type="id" />
+    <item name="tietCardNum" type="id" />
+    <item name="tilmmyy" type="id" />
+    <item name="tietmmyy" type="id" />
+    <item name="tilSec" type="id" />
+    <item name="tietsec" type="id" />
+</resources>
